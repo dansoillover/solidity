@@ -4,12 +4,6 @@ set -e
 ROOTDIR="$(dirname "$0")/.."
 BUILDDIR="${ROOTDIR}/build"
 
-if [[ $# -eq 0 ]]; then
-    BUILD_TYPE=Release
-else
-    BUILD_TYPE="$1"
-fi
-
 if [[ "$(git tag --points-at HEAD 2>/dev/null)" == v* ]]; then
 	touch "${ROOTDIR}/prerelease.txt"
 fi
